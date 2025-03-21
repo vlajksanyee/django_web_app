@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="content-section">
+        <!-- Form -->
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -9,11 +10,13 @@
                 {{ form.as_p }}
             </fieldset>
 
+            <!-- Submit button -->
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Sign Up</button>
             </div>
         </form>
-
+        
+        <!-- Already registered -->
         <div class="border-top pt-3">
             <small class="text-muted">
                 Already have an account? <a class="ml-2" href="#">Sign In</a>
