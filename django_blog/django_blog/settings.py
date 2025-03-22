@@ -135,3 +135,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # Login
 
 LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'
