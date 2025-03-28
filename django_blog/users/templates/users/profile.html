@@ -3,6 +3,7 @@
 
 {% block content %}
     <div class="content-section">
+        <!-- Profile info -->
         <div class="media pb-5">
             <img class="rounded-circle account-img float-start" src="{{ user.profile.image.url }}">
             <div class="media-body">
@@ -10,6 +11,20 @@
                 <p class="text-secondary">{{ user.email }}</p>
             </div>
         </div>
-        <!-- FORM HERE -->
+
+        <!-- Update form -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+            </fieldset>
+
+            <!-- Submit button -->
+            <div class="form-group">
+                <button class="btn btn-outline-info mb-2" type="submit">Update</button>
+            </div>
+        </form>
     </div>
 {% endblock content %}
